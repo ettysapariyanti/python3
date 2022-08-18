@@ -35,3 +35,19 @@ finally:
 
 
 ```
+
+
+
+contoh source code untuk di server Ubuntu yg sering mengalami masalah koneksi ke MySQL alias kesulitan untuk instal module di pip, yg berguna untuk terhubung ke server MySQL:
+
+```python
+
+import mysql.connector
+
+databaseku = mysql.connector.connect(host="999.tcp.ap.ngrok.io",user="******",password="**********",auth_plugin="mysql_native_password",database="*********",port="19921")
+
+print(databaseku)
+
+
+
+```
