@@ -267,11 +267,72 @@ Kode Barang : {{ kodebarang }}
 
 ```
 
+Di bawah ini source code yang menginspirasi untuk bisa mencetak hasil query nya ke halaman web
+
+```python
+
+from flask import Flask, render_template
+
+aplikasi = Flask(__name__)
+
+
+nilaiTertinggi = 100
+
+@aplikasi.route('/')
+
+
+# nilaiTertinggi = 100
+
+
+def halamanUtama():
+
+    nilaiKata = {
+    
+        "nilaiTertinggi": nilaiTertinggi,
+    
+    
+    }
+    
+    return render_template("web4.html", **nilaiKata)
+    
+if __name__ == '__main__':
+
+    aplikasi.run(host='0.0.0.0', port=8543, debug=True)
+
+
+```
+
+di bawah ini adalah template HTML nya:
+
+``` html
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+	
+	
+	
+	
+	</head>
+	
+	
+	<body>
+	
+		<p>Nilai Tertinggi = {{ nilaiTertinggi }}</p>
+	
+	
+	</body>
 
 
 
+</html>
 
 
+
+```
 
 
 
