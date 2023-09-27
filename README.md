@@ -335,6 +335,98 @@ di bawah ini adalah template HTML nya:
 ```
 
 
+Contoh sederhana dari menghasil RESTFUL API, dengan menggunakan Flask dan MariaDB :
+
+```python
+
+# melanjutkan pembuatan program yg bisa menampilkan JSON di web
+
+# datanya berasal dari MariaDB.
+
+# kali ini menggabungkan dictionary seperti sebelumnya.
+
+# dan mengatasi masalah data yang berupa tanggal ketika  di konversi ke JSON
+
+
+import mariadb
+
+
+import sys
+
+
+import json
+
+
+from flask import Flask, render_template
+
+
+aplikasi = Flask(__name__)
+
+
+@aplikasi.route('/kodebarang')
+
+
+def dataPrinter():
+
+    try:
+
+        koneksi = mariadb.connect(user="steven",password="kucing",host="dk7ji791eetus5yei7h9m3emcfskjoqqh9u47jhgrdon9opk7gty.loki",port=3306,database="saham")
+        
+    except mariadb.Error as e:
+
+        print(f"Gagal Terkoneksi Ke : {e}")
+        
+        sys.exit(1)
+        
+    # return "Berhasil Terkoneksi"
+        
+        
+        
+    class create_dict(dict):
+
+        def __init__(self):
+        
+            self = dict()
+            
+            
+        def add(self, key, value):
+        
+            self[key] = value
+                
+                
+    mydict = create_dict()
+            
+    kursor = koneksi.cursor()
+            
+    kursor.execute("SELECT kodedata,tanggalpendataan FROM daftartintaprinter")
+            
+    hasil = kursor.fetchall()
+    
+    
+    return hasil
+            
+            
+            
+    for row in hasil:
+                        
+        mydict.add(row[0],({"kodedata":row[0],"tanggalpendataan":row[1].strftime("%Y-%m-%d")}))
+                    
+        tampilkan_JSON = json.dumps(mydict, indent=2, sort_keys=True)
+                    
+                
+        return tampilkan_JSON
+            
+            
+    
+            
+if __name__ == '__main__':
+
+    aplikasi.run(host="dk7ji791eetus5yei7h9m3emcfskjoqqh9u47jhgrdon9opk7gty.loki", port=5432, debug=True)
+
+
+```
+
+
 
 
 
