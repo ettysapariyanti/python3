@@ -431,7 +431,7 @@ Selanjutnya kita akan belajar bagaimana mengkonsumsi data berformat JSON yang di
 
 Sekarang kita mulai menuliskan membuat aplikasi web menggunakan Flask dan Blueprints.
 
-Selanjutnya kita akan mengeksekusi file python nya langsung dalam bentuk image docker.
+Selanjutnya kita akan mengeksekusi file pythonnya langsung dalam bentuk image docker.
 
 
 
