@@ -429,6 +429,10 @@ if __name__ == '__main__':
 Selanjutnya kita akan belajar bagaimana mengkonsumsi data berformat JSON yang dihasilkan oleh Restful API. Untuk kemudian data tersebut ditampilkan ke dalam halaman web.
 
 
+Sekarang kita mulai menuliskan membuat aplikasi web menggunakan Flask dan Blueprints.
+
+Selanjutnya kita akan mengeksekusi file python nya langsung dalam bentuk image docker.
+
 
 
 
