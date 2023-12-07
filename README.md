@@ -551,7 +551,60 @@ if __name__=='__main__':
 
 ```
 
+Ini source code yang bisa membaca hasil dictionary secara satu per satu : 
 
+```python
+
+from jinja2 import Template, Environment, FileSystemLoader
+
+from flask import Flask,render_template,request,json,jsonify
+
+
+import mariadb
+
+import sys
+
+
+aplikasi = Flask(__name__)
+
+@aplikasi.route('/')
+
+def formUtama():
+
+    return render_template("halaman1.html")
+    
+    
+@aplikasi.route('/tampilData',methods=['POST'])
+
+def tampilkanData():
+
+    if request.method=='POST':
+    
+        koneksi = mariadb.connect(user="steven",password="kucing",host="1.1.3.11",port=3306,database="saham")
+        
+        kursor = koneksi.cursor(dictionary=True)
+        
+        kursor.execute("SELECT kodedata,tanggalpendataan,kodebarang FROM daftartintaprinter2")
+        
+        hasil = kursor.fetchall()
+        
+        print(hasil[3]["kodebarang"])
+        
+        
+        koneksi.commit()
+        
+        koneksi.close()
+        
+        
+        return render_template("halaman2.html")
+        
+        
+if __name__=='__main__':
+
+    aplikasi.run(host='0.0.0.0',port=8543,debug=True)
+    
+
+```
 
 
 
