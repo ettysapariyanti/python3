@@ -609,6 +609,120 @@ if __name__=='__main__':
 
 ### Source Code Untuk Menampilkan Data hasil Fetchall dari Mariadb ke halaman web, dengan data bisa dipilih per baris dan per item.
 
+Source code untuk python yang melakukan query ke Maridb dan melakukan pemilahan data untuk ditampilkan ke halaman web:
+
+```python
+
+from jinja2 import Template, Environment, FileSystemLoader
+
+from flask import Flask, render_template, request, json, jsonify
+
+
+import mariadb
+
+import sys
+
+
+aplikasi = Flask(__name__)
+
+@aplikasi.route('/')
+
+def formUtama():
+
+    return render_template("halaman1.html")
+
+@aplikasi.route('/tampilData',methods=['POST'])
+
+def tampilkanData():
+
+    if request.method=='POST':
+    
+        koneksi = mariadb.connect(user="steven",password="kucing",host="1.1.3.9",port=3306,database="saham")
+        
+        kursor= koneksi.cursor(dictionary=True)
+        
+        kursor.execute("SELECT kodedata,tanggalpendataan,kodebarang,NIP,namabarang,kodebagian,namadivisi,merekprinter,serialprinter,macaddress,jenistinta,namapengguna FROM daftartintaprinter2")
+        
+        hasil = kursor.fetchall()
+        
+        # di bawah ini untuk menampilkan baris data yang urutan 1
+        
+        kodedata1 = hasil[0]["kodedata"]
+        
+        tanggalpendataan1 = hasil[0]["tanggalpendataan"]
+        
+        kodebarang1 = hasil[0]["kodebarang"]
+        
+        nip1 = hasil[0]["NIP"]
+        
+        namabarang1 = hasil[0]["namabarang"]
+        
+        kodebagian1 = hasil[0]["kodebagian"]
+        
+        namadivisi1 = hasil[0]["namadivisi"]
+        
+        merekprinter1 = hasil[0]["merekprinter"]
+        
+        serialprinter1 = hasil[0]["serialprinter"]
+        
+        macaddress1 = hasil[0]["macaddress"]
+        
+        jenistinta1 = hasil[0]["jenistinta"]
+        
+        namapengguna1 = hasil[0]["namapengguna"]
+        
+        
+        # di bawah ini untuk menampilkan baris data yang urutan 2
+        
+        kodedata2 = hasil[1]["kodedata"]
+        
+        tanggalpendataan2 = hasil[1]["tanggalpendataan"]
+        
+        kodebarang2 = hasil[1]["kodebarang"]
+        
+        nip2 = hasil[1]["NIP"]
+        
+        namabarang2 = hasil[1]["namabarang"]
+        
+        kodebagian2 = hasil[1]["kodebagian"]
+        
+        namadivisi2 = hasil[1]["namadivisi"]
+        
+        merekprinter2 = hasil[1]["merekprinter"]
+        
+        serialprinter2 = hasil[1]["serialprinter"]
+        
+        macaddress2 = hasil[1]["macaddress"]
+        
+        jenistinta2 = hasil[1]["jenistinta"]
+        
+        namapengguna2 = hasil[1]["namapengguna"]
+        
+        
+        
+        
+        
+        koneksi.commit()
+        
+        koneksi.close()
+        
+        
+        return render_template("halaman3.html", kodeData1 = kodedata1, tanggalPendataan1 = tanggalpendataan1, kodeBarang1 = kodebarang1, NIP1 = nip1, namaBarang1 = namabarang1, kodeBagian1 = kodebagian1, namaDivisi1 = namadivisi1, merekPrinter1 = merekprinter1, serialPrinter1 = serialprinter1, macAddress1 = macaddress1, jenisTinta1 = jenistinta1, namaPengguna1 = namapengguna1, kodeData2 = kodedata2, tanggalPendataan2 = tanggalpendataan2, kodeBarang2 = kodebarang2, NIP2 = nip2, namaBarang2 = namabarang2, kodeBagian2 = kodebagian2, namaDivisi2 = namadivisi2, merekPrinter2 = merekprinter2, serialPrinter2 = serialprinter2, macAddress2 = macaddress2, jenisTinta2 = jenistinta2, namaPengguna2 = namapengguna2 )
+
+if __name__ == '__main__':
+
+    aplikasi.run(host='0.0.0.0',port=8543,debug=True)
+
+
+
+
+```
+
+
+
+
+
+
 
 
 
