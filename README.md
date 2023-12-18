@@ -607,6 +607,8 @@ if __name__=='__main__':
 ```
 
 
+### Source Code Untuk Menampilkan Data hasil Fetchall dari Mariadb ke halaman web, dengan data bisa dipilih per baris dan per item.
+
 
 
 
