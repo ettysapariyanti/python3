@@ -718,7 +718,37 @@ if __name__ == '__main__':
 
 ```
 
+Di bawah ini source code untuk halaman tombol yang berguna memicu source code di atas:
 
+'''html
+
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+	
+	
+	
+	
+	
+	
+	</head>
+	
+	<body>
+	
+	
+		<form action="http://1.1.3.9:8543/tampilData" method="POST" id="formPrinter" name="formPrinter">
+		
+			<input type="submit" Value="Tampilkan Data Dari Mariadb">
+		
+		</form>
+	
+	</body>
+
+```
 
 
 
