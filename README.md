@@ -720,7 +720,7 @@ if __name__ == '__main__':
 
 Di bawah ini source code untuk halaman tombol yang berguna memicu source code di atas:
 
-'''html
+```html
 
 
 <!DOCTYPE html>
