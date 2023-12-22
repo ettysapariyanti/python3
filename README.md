@@ -750,7 +750,96 @@ Di bawah ini source code untuk halaman tombol yang berguna memicu source code di
 
 ```
 
+Ini source code halaman HTML untuk menampilkan semua data yang di dapat dari Mariadb secara satu per satu:
 
+```html
+
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+	
+	
+	
+	
+	</head>
+	
+	
+	
+	<body>
+	
+		<p>Kode Data 1 : {{ kodeData1 }} </p>
+		
+		<p>Tanggal Pendataan 1 : {{ tanggalPendataan1 }} </p>
+		
+		<p>Kode Barang 1 : {{ kodeBarang1 }} </p>
+		
+		<p>NIP 1 : {{ NIP1 }}</p>
+		
+		<p>Nama Barang 1 : {{ namaBarang1 }}</p>
+		
+		<p>Kode Bagian 1 : {{ kodeBagian1 }}</p>
+		
+		<p>Nama Divisi 1 : {{namaDivisi1}}</p>
+		
+		<p>Merek Printer 1 : {{merekPrinter1}}</p>
+		
+		<p>Serial Printer 1 : {{serialPrinter1}}</p>
+		
+		<p>Mac Address 1 : {{macAddress1}}</p>
+		
+		<p>Jenis Tinta 1 : {{jenisTinta1}}</p>
+		
+		<p>Nama Pengguna 1 : {{namaPengguna1}}</p>
+		
+		<br>
+		
+		<br>
+		
+		
+		<h3>Di Bawah ini adalah data untuk item tinta baris 2</h3>
+		
+		<br>
+		
+		<br>
+		
+		<p>Kode Data 2 : {{ kodeData2 }}</p>
+		
+		<p>Tanggal Pendataan 2 : {{ tanggalPendataan2 }} </p>
+		
+		<p>Kode Barang 2 : {{ kodeBarang2 }} </p>
+		
+		<p>NIP 2 : {{ NIP2 }}</p>
+		
+		<p>Nama Barang 2 : {{ namaBarang2 }}</p>
+		
+		<p>Kode Bagian 2 : {{ kodeBagian2 }}</p>
+		
+		<p>Nama Divisi 2 : {{namaDivisi2}}</p>
+		
+		<p>Merek Printer 2 : {{merekPrinter2}}</p>
+		
+		<p>Serial Printer 2 : {{serialPrinter2}}</p>
+		
+		<p>Mac Address 2 : {{macAddress2}}</p>
+		
+		<p>Jenis Tinta 2 : {{jenisTinta2}}</p>
+		
+		<p>Nama Pengguna 2 : {{namaPengguna2}}</p>
+		
+		
+		
+	
+	</body>
+
+
+</html>
+
+
+
+
+```
 
 
 
