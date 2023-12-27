@@ -914,6 +914,60 @@ Ini source code untuk form HTML nya :
 
 ```
 
+Ini mengingat kembali konsep input data dan menampilkan hasil inputannya.
 
+source code python nya:
+
+
+```python
+
+from jinja2 import Template, Environment, FileSystemLoader
+
+from flask import Flask, render_template, request, json, jsonify
+
+
+import mariadb
+
+import sys
+
+
+aplikasi = Flask(__name__)
+
+@aplikasi.route('/')
+
+def formPemilihan():
+
+    return render_template("halaman1.html")
+    
+    
+    
+@aplikasi.route('/tampilData',methods=['POST'])
+
+def tampilkanData():
+
+    if request.method=='POST':
+    
+        koneksi = mariadb.connect(user="steven",password="kucing",host="1.1.3.8")
+    
+        # mengambil data nama awal
+        
+        tampilNamaAwal = request.form.get('namaawal')
+        
+        # mengambil data nama akhir
+        
+        tampilNamaAkhir = request.form.get('namaakhir')
+    
+        return "Nama Lengkap : " + tampilNamaAwal + " " + tampilNamaAkhir
+        
+        return render_template("halaman2.html")
+    
+if __name__ == '__main__':
+
+    aplikasi.run(host='0.0.0.0',port=8543,debug=True)
+
+
+
+
+```
 
 
