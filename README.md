@@ -842,7 +842,35 @@ Ini source code halaman HTML untuk menampilkan semua data yang di dapat dari Mar
 ```
 
 
+Ini source code dasar untuk form input data yang nantinya bisa untuk pencarian data:
 
+
+```python
+
+from jinja2 import Template, Environment, FileSystemLoader
+
+from flask import Flask, render_template, request, json, jsonify
+
+
+import mariadb
+
+import sys
+
+
+aplikasi = Flask(__name__)
+
+@aplikasi.route('/')
+
+def formPemilihan():
+
+    return render_template("halaman1.html")
+    
+    
+if __name__ == '__main__':
+
+    aplikasi.run(host='0.0.0.0',port=8543,debug=True)
+
+```
 
 
 
