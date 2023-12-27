@@ -872,5 +872,48 @@ if __name__ == '__main__':
 
 ```
 
+Ini source code untuk form HTML nya :
+
+```html
+
+<!DOCTYPE html>
+
+<head>
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+
+
+<h3>Form Input Data Pencarian</h3>
+
+
+<form action="http://1.1.3.14:8543/tampilData" method="POST" id="formPrinter" name="formPrinter">
+
+<label for="namaawal">Nama Awal : </label>
+
+<input type="text" id="namaawal" name="namaawal" placeholder="Isikan Nama Awal">
+
+<label for="namaakhir">Nama Akhir : </label>
+
+<input type="text" id="namaakhir" name="namaakhir" placeholder="Isikan Nama Akhir">
+
+<button type="submit">Tampilkan Data</button>
+
+</form>
+
+</body>
+
+
+```
+
+
 
 
